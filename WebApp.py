@@ -2,7 +2,7 @@ import streamlit as st
 from elasticsearch import Elasticsearch
 from sentence_transformers import SentenceTransformer
 
-indexName = "my_products"
+indexName = "all_products"
 
 try:
     es = Elasticsearch(
@@ -25,12 +25,12 @@ def search(input_keyword):
     vector_of_input_keyword = model.encode(input_keyword)
 
     query = {
-        "field": "DescriptionVector",
-        "query_vector": vector_of_input_keyword,
-        "k": 10,
-        "num_candidates": 500
-    }
-    res = es.knn_search(index="my_products"
+    "field": "DescriptionVector",
+    "query_vector" : vector_of_input_keyword,
+    "k" : 10,
+    "num_candidates" :500,
+}
+    res = es.knn_search(index="all_products"
                         , knn=query 
                         , source=["ProductName","Description"]
                         )
