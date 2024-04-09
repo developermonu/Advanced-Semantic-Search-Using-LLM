@@ -6,8 +6,8 @@ indexName = "all_products"
 
 try:
     es = Elasticsearch(
-    "https://7e0d0bd326fc41f8ad3aed7fcb4af406.us-central1.gcp.cloud.es.io:443",
-    api_key= "d5df5d5237d9477b8400b1e92c5d9033:dXMtY2VudHJhbDEuZ2NwLmNsb3VkLmVzLmlvJDdlMGQwYmQzMjZmYzQxZjhhZDNhZWQ3ZmNiNGFmNDA2JGRmNWM3MTI4MjJkMTQ4ODRiMDI2OGRiYTcyZWYzZjZm"
+    "https://7e0d0bd326fc41f8ad3aed7fcb4af406.us-central1.gcp.cloud.es.io",
+    api_key= "d5df5d5237d9477b8400b1e92c5d9033:dXMtY2VudHJhbDEuZ2NwLmNsb3VkLmVzLmlvOjQ0MyQ3ZTBkMGJkMzI2ZmM0MWY4YWQzYWVkN2ZjYjRhZjQwNiRkZjVjNzEyODIyZDE0ODg0YjAyNjhkYmE3MmVmM2Y2Zg=="
     )
 except ConnectionError as e:
     print("Connection Error:", e)
