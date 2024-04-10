@@ -2,12 +2,11 @@ import streamlit as st
 from elasticsearch import Elasticsearch
 from sentence_transformers import SentenceTransformer
 
-indexName = "all_products"
-
+indexName = "myntra_products"
 try:
-    es = Elasticsearch(
-    "https://7e0d0bd326fc41f8ad3aed7fcb4af406.us-central1.gcp.cloud.es.io",
-    api_key= "d5df5d5237d9477b8400b1e92c5d9033:dXMtY2VudHJhbDEuZ2NwLmNsb3VkLmVzLmlvOjQ0MyQ3ZTBkMGJkMzI2ZmM0MWY4YWQzYWVkN2ZjYjRhZjQwNiRkZjVjNzEyODIyZDE0ODg0YjAyNjhkYmE3MmVmM2Y2Zg=="
+    es= Elasticsearch(
+    r"https://7e0d0bd326fc41f8ad3aed7fcb4af406.us-central1.gcp.cloud.es.io:443",
+    api_key="UXkyX3c0NEIxR3RNQ2JUSmtKSUQ6eEhEcTVTUElUeS1FWjM3TklSUVd3dw=="
     )
 except ConnectionError as e:
     print("Connection Error:", e)
@@ -30,7 +29,7 @@ def search(input_keyword):
     "k" : 10,
     "num_candidates" :500,
 }
-    res = es.knn_search(index="all_products"
+    res = es.knn_search(index="myntra_products"
                         , knn=query 
                         , source=["ProductName","Description"]
                         )
