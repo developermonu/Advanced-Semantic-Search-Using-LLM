@@ -41,7 +41,7 @@ def main():
     st.title("Search ONDC Network Fashion Products")
 
     # Input: User enters search query
-    search_query = st.text_input("Enter your search query . Example - \"Blue shoes for men\" , \"round neck tshirt \"")
+    search_query = st.text_input("Enter your search query . Example - \"Blue shoes for men\" , \"round neck tshirt \"",placeholder="Blue shoes for men")
 
     # Button: User triggers the search
     if st.button("Search"):
